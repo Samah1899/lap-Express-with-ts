@@ -1,7 +1,7 @@
 
 import express,{Application, Request, Response} from "express"
 const app:Application=express();
-const port:Number=3000
+const port:Number=3008
 const data=require('./data')
 
 app.use(express.json())
@@ -10,9 +10,9 @@ app.use(express.json())
 app.get('/',(req:Request,res:Response)=>{
         //feach
         //res ->send
-        res.send(fetch('https://jsonplaceholder.typicode.com/todos/1')
+         fetch('https://jsonplaceholder.typicode.com/todos/1')
         .then(response => response.json())
-        .then(json => console.log(json)))
+        .then(json => res.send(json))
 })
 
 //CRUD
